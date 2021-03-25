@@ -23,7 +23,7 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('ec2-13-49-64-143.eu-north-1.compute.amazonaws.com/exercises/')
+    axios.get('http://ec2-13-49-64-143.eu-north-1.compute.amazonaws.com/exercises/')
      .then(response => {
        this.setState({ exercises: response.data });
       console.log("logged exercises!");
