@@ -15,6 +15,11 @@ RUN npm install --silent
 # copy local files to app folder
 COPY . .
 
-EXPOSE 3000
+RUN npm run build
 
-CMD ["npm","start"]
+RUN npm install -g serve
+
+EXPOSE 80
+
+CMD ["serve","-s","build"]
+
